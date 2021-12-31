@@ -1,18 +1,28 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
-
-import AllQuotes from './pages/AllQuotes';
-import QuoteDetail from './pages/QuoteDetail';
-import NewQuote from './pages/NewQuote';
-import NotFound from './pages/NotFound';
+import React,{Suspense} from 'react'
 import Layout from './components/layout/Layout';
 import AuthPage from './pages/AuthPage';
 import {useContext} from 'react'
 import AuthContext from './store/auth-context'
+import LoadingSpinner from './components/ui/LoadingSpinner';
+
+
+const NewQuote = React.lazy(() => import('./pages/NewQuote'));
+const QuoteDetail = React.lazy(() => import('./pages/QuoteDetail'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
+const AllQuotes = React.lazy(() => import('./pages/AllQuotes'));
 
 function App() {
   const authCtx = useContext(AuthContext);
   return (
     <Layout>
+       <Suspense
+        fallback={
+          <div className='centered'>
+            <LoadingSpinner />
+          </div>
+        }
+      >
       <Switch>
         <Route path='/' exact>
           <Redirect to='/quotes' />
@@ -34,6 +44,7 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
+      </Suspense>
     </Layout>
   );
 }
