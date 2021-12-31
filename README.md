@@ -6,3 +6,5 @@ Also create a .env file and define the values , for this project i would recomme
 Firebase domain of realtime database in PRJ_KEY and web keys from project setting in API_KEY
 REACT_APP_API_KEY=some_value
 REACT_APP_PRJ_KEY=some_value
+
+This project is hosted at https://react-custom-e0fe9.web.app so do have a look at it !
