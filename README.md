@@ -7,4 +7,4 @@ Firebase domain of realtime database in PRJ_KEY and web keys from project settin
 REACT_APP_API_KEY=some_value
 REACT_APP_PRJ_KEY=some_value
 
-This project is hosted at https://react-custom-e0fe9.web.app so do have a look at it !
+This project is hosted at https://react-custom-e0fe9.web.app so do have a look at it {Sorry,MongoDB no longer connecting because limit has been reached}
